@@ -1,23 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import { orange } from '@material-ui/core/colors';
+import "@fontsource/roboto"
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#1890FF",
+    },
+    secondary: {
+      main: orange[400],
+    },
+  },
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MuiThemeProvider theme={theme}>
+      <App />
+    </MuiThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.unregister();
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
