@@ -68,3 +68,6 @@
     font-weight: 400;
     color: #777777;
 }
+.Home .AreaChart {
+    width: 100% !important;
+}

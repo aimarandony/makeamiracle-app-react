@@ -116,9 +116,9 @@ const Home = () => {
             <Grid item xs={9}>
               <div className="card card-scholarships">
                 <h3>Becas Otorgadas</h3>
-                <AreaChart width={850} height={238} data={data}>
+                <AreaChart width={850} height={238} data={data} className="AreaChart">
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name"/>
+                  <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
                   <Area type="monotone" dataKey="Becas" stroke="#1890FF" fill="#c4e3ff" />
